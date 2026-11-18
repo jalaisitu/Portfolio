@@ -8,6 +8,7 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Chatbot from "./components/Chatbot";
 import ScrollEffects from "./components/ScrollEffects";
+import SmoothScroll from "./components/SmoothScroll";
 import useTheme from "./hooks/useTheme";
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <>
       <ScrollEffects />
+      <SmoothScroll />
       <div className="scroll-rail" aria-hidden="true">
         <span />
       </div>

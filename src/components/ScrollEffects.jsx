@@ -21,8 +21,12 @@ export default function ScrollEffects() {
       scene.style.setProperty("--scene-shift", "0px");
       scene.style.setProperty("--scene-clip", "0%");
       scene.style.setProperty("--scene-opacity", "1");
-      scene.style.setProperty("--hero-shift", "0px");
-      scene.style.setProperty("--hero-opacity", "1");
+      scene.style.setProperty("--hero-primary-x", "0vw");
+      scene.style.setProperty("--hero-accent-x", "0vw");
+      scene.style.setProperty("--hero-title-scale", "1");
+      scene.style.setProperty("--hero-title-opacity", "1");
+      scene.style.setProperty("--hero-details-opacity", "1");
+      scene.style.setProperty("--hero-cue-opacity", "1");
     };
 
     const update = () => {
@@ -41,13 +45,29 @@ export default function ScrollEffects() {
         const type = scene.dataset.scrollScene;
 
         if (type === "hero") {
-          const travel = Math.max(rect.height - window.innerHeight * 0.55, 1);
+          const travel = Math.max(rect.height - window.innerHeight, 1);
           const progress = clamp(-rect.top / travel);
+          const split = easeOut(clamp((progress - 0.08) / 0.72));
+          const detailsFade = clamp((progress - 0.05) / 0.28);
+          const titleFade = clamp((progress - 0.76) / 0.24);
           scene.style.setProperty("--scene-progress", String(progress));
-          scene.style.setProperty("--hero-shift", `${progress * -72}px`);
+          scene.style.setProperty("--hero-primary-x", `${split * -15}vw`);
+          scene.style.setProperty("--hero-accent-x", `${split * 12}vw`);
           scene.style.setProperty(
-            "--hero-opacity",
-            String(1 - progress * 0.62),
+            "--hero-title-scale",
+            String(1 + split * 0.14),
+          );
+          scene.style.setProperty(
+            "--hero-title-opacity",
+            String(1 - titleFade),
+          );
+          scene.style.setProperty(
+            "--hero-details-opacity",
+            String(1 - detailsFade),
+          );
+          scene.style.setProperty(
+            "--hero-cue-opacity",
+            String(1 - clamp(progress / 0.14)),
           );
           return;
         }

@@ -14,9 +14,12 @@ export default function Hero() {
           Jalal Hazi Miah · Barcelona
         </p>
         <h1 id="hero-title">
-          Frontend development.
-          <br />
-          <em>Ideas that work.</em>
+          <span className="hero-title-line hero-title-primary">
+            Frontend development.
+          </span>
+          <span className="hero-title-line hero-title-accent">
+            <em>Ideas that work.</em>
+          </span>
         </h1>
         <p className="hero-intro">
           I am a web development student based in Barcelona. I build interfaces
@@ -35,10 +38,10 @@ export default function Hero() {
           <span>Team prototypes</span>
           <span>Security labs</span>
         </div>
-      </div>
-      <div className="scroll-cue" aria-hidden="true">
-        <span>Scroll to explore</span>
-        <span className="scroll-cue-line" />
+        <div className="scroll-cue" aria-hidden="true">
+          <span>Scroll to explore</span>
+          <span className="scroll-cue-line" />
+        </div>
       </div>
     </section>
   );

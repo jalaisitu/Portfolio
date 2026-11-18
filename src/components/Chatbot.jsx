@@ -64,6 +64,7 @@ export default function Chatbot() {
           </header>
           <div
             className="chat-messages"
+            data-lenis-prevent
             ref={log}
             role="log"
             aria-label="Conversation"

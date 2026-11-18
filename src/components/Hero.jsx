@@ -3,7 +3,11 @@ import { profile } from "../data/portfolio";
 
 export default function Hero() {
   return (
-    <section className="shell hero" aria-labelledby="hero-title">
+    <section
+      className="shell hero"
+      aria-labelledby="hero-title"
+      data-scroll-scene="hero"
+    >
       <div className="hero-copy">
         <p className="eyebrow">
           <span className="status-dot" aria-hidden="true" />
@@ -31,6 +35,10 @@ export default function Hero() {
           <span>Team prototypes</span>
           <span>Security labs</span>
         </div>
+      </div>
+      <div className="scroll-cue" aria-hidden="true">
+        <span>Scroll to explore</span>
+        <span className="scroll-cue-line" />
       </div>
     </section>
   );

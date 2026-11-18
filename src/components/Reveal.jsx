@@ -43,7 +43,7 @@ export default function Reveal({ children, className = "", delay = 0 }) {
     };
   }, [delay]);
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} className={className} data-scroll-scene="reveal">
       {children}
     </div>
   );

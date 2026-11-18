@@ -7,6 +7,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Chatbot from "./components/Chatbot";
+import ScrollEffects from "./components/ScrollEffects";
 import useTheme from "./hooks/useTheme";
 
 export default function App() {
@@ -14,6 +15,10 @@ export default function App() {
 
   return (
     <>
+      <ScrollEffects />
+      <div className="scroll-rail" aria-hidden="true">
+        <span />
+      </div>
       <a className="skip" href="#main">
         Skip to content
       </a>

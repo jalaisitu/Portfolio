@@ -7,19 +7,19 @@ export default function Contact() {
     <section
       id="contact"
       className="shell contact-section"
-      aria-label="Contacto profesional"
+      aria-label="Professional contact"
     >
       <Reveal className="contact-inner">
         <div>
-          <p className="eyebrow">05 / CONTACTO PROFESIONAL</p>
+          <p className="eyebrow">05 / PROFESSIONAL CONTACT</p>
           <p>
-            Puedes escribirme para hablar de mis proyectos,
+            Get in touch to discuss my projects,
             <br />
-            mi formación o una oportunidad profesional.
+            my studies or a professional opportunity.
           </p>
           <div className="actions">
             <a href={`mailto:${profile.email}`} className="button light">
-              Contactar por email <span aria-hidden="true">↗</span>
+              Contact me by email <span aria-hidden="true">↗</span>
             </a>
             <a href={profile.linkedin} className="text-link">
               LinkedIn <span aria-hidden="true">↗</span>

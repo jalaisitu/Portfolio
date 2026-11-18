@@ -10,26 +10,26 @@ export default function Hero() {
           Jalal Hazi Miah · Barcelona
         </p>
         <h1 id="hero-title">
-          Desarrollo frontend.
+          Frontend development.
           <br />
-          <em>Ideas que funcionan.</em>
+          <em>Ideas that work.</em>
         </h1>
         <p className="hero-intro">
-          Soy estudiante de desarrollo web en Barcelona. Creo interfaces con
-          JavaScript y React y exploro la IA con prototipos.
+          I am a web development student based in Barcelona. I build interfaces
+          with JavaScript and React and explore AI through prototypes.
         </p>
         <div className="actions">
           <a href="#projects" className="button primary">
-            Ver proyectos y código <span aria-hidden="true">↗</span>
+            View projects and code <span aria-hidden="true">↗</span>
           </a>
           <a href={`mailto:${profile.email}`} className="text-link">
-            Contactar por email <span aria-hidden="true">→</span>
+            Contact me by email <span aria-hidden="true">→</span>
           </a>
         </div>
-        <div className="hero-proof" aria-label="Experiencia de proyectos">
+        <div className="hero-proof" aria-label="Project experience">
           <span>React & JavaScript</span>
-          <span>Prototipos en equipo</span>
-          <span>Laboratorios de seguridad</span>
+          <span>Team prototypes</span>
+          <span>Security labs</span>
         </div>
       </div>
     </section>

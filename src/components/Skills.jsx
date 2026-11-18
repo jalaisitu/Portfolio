@@ -13,10 +13,10 @@ export default function Skills() {
       <SectionHeading
         id="skills-title"
         number="04"
-        label="HABILIDADES"
+        label="SKILLS"
         title={
           <>
-            Herramientas con <em>contexto.</em>
+            Tools with <em>context.</em>
           </>
         }
       />

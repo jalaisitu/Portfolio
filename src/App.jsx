@@ -15,7 +15,7 @@ export default function App() {
   return (
     <>
       <a className="skip" href="#main">
-        Saltar al contenido
+        Skip to content
       </a>
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main id="main" tabIndex={-1}>
@@ -30,9 +30,9 @@ export default function App() {
         <p>
           © {new Date().getFullYear()} Jalal Hazi Miah
           <br />
-          Desarrollo frontend · Barcelona
+          Frontend development · Barcelona
         </p>
-        <a href="#main">Volver arriba ↑</a>
+        <a href="#main">Back to top ↑</a>
       </footer>
       <Chatbot />
     </>

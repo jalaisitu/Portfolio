@@ -13,15 +13,15 @@ export default function Projects() {
       <SectionHeading
         id="projects-title"
         number="01"
-        label="PROYECTOS Y EVIDENCIAS"
+        label="PROJECTS AND EVIDENCE"
         title={
           <>
-            Qué he construido.
+            What I have built.
             <br />
-            <em>Cómo funciona.</em>
+            <em>How it works.</em>
           </>
         }
-        aside="Contexto, participación y decisiones técnicas. Cada caso distingue el trabajo individual del trabajo del equipo."
+        aside="Context, contribution and technical decisions. Each case clearly separates individual work from team work."
       />
       <div className="project-grid">
         {projects.map((project, index) => (

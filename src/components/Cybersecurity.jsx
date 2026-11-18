@@ -13,37 +13,37 @@ export default function Cybersecurity() {
       <SectionHeading
         id="cyber-title"
         number="02"
-        label="CIBERSEGURIDAD"
+        label="CYBERSECURITY"
         title={
           <>
-            Entender los riesgos.
+            Understand the risks.
             <br />
-            <em>Desarrollar con criterio.</em>
+            <em>Build with awareness.</em>
           </>
         }
-        aside="Laboratorios académicos en entornos de entrenamiento, como complemento a mi formación en desarrollo web."
+        aside="Academic labs completed in training environments as a complement to my web development studies."
       />
       <div className="cyber-grid">
         {labs.map((lab, index) => (
           <Reveal className="cyber-card" key={lab.id} delay={index * 70}>
             <article>
-              <p className="eyebrow">Laboratorio académico · 2026</p>
+              <p className="eyebrow">Academic lab · 2026</p>
               <h3>{lab.name}</h3>
               <dl className="lab-details">
                 <div>
-                  <dt>Objetivo</dt>
+                  <dt>Objective</dt>
                   <dd>{lab.problem}</dd>
                 </div>
                 <div>
-                  <dt>Mi trabajo</dt>
+                  <dt>My work</dt>
                   <dd>{lab.work}</dd>
                 </div>
                 <div>
-                  <dt>Resultado y alcance</dt>
+                  <dt>Result and scope</dt>
                   <dd>{lab.result}</dd>
                 </div>
               </dl>
-              <ul className="tags" aria-label="Áreas de trabajo">
+              <ul className="tags" aria-label="Areas of work">
                 {lab.tags.map((tag) => (
                   <li key={tag}>{tag}</li>
                 ))}

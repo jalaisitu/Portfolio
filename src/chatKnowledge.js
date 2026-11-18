@@ -5,127 +5,131 @@ const normalize = (text) =>
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
-const contactLink = ["Contactar conmigo", "#contact"];
 
-// Las preguntas específicas se evalúan antes que los temas generales.
+const contactLink = ["Contact me", "#contact"];
+
+// Specific questions are evaluated before broader topics.
 const topics = [
   {
-    pattern: /\b(experiencia|seniority|senior|junior)\b/,
+    pattern: /\b(experience|seniority|senior|junior|experiencia)\b/,
     answer:
-      "Soy estudiante de desarrollo web. Mi experiencia descrita en el portfolio incluye proyectos académicos y prototipos en equipo. No tengo publicada una cifra de años de experiencia profesional.",
-    link: ["Ver mis proyectos", "#projects"],
+      "I am a web development student. The experience shown in my portfolio comes from academic projects and team prototypes. I do not claim a specific number of years of professional experience.",
+    link: ["View my projects", "#projects"],
   },
   {
     pattern:
-      /\b(disponibilidad|disponible|incorporacion|salario|remoto|jornada|curriculum|cv|practicas)\b/,
+      /\b(availability|available|salary|remote|full.?time|part.?time|resume|cv|internship|disponibilidad|practicas)\b/,
     answer:
-      "Esos detalles profesionales todavía no están publicados en el portfolio. Puedes escribirme para consultar mi disponibilidad, mi CV o mi proyecto de prácticas.",
+      "Those professional details are not currently published in my portfolio. You can contact me to ask about my availability, CV or internship project.",
     link: contactLink,
   },
   {
-    pattern: /\b(ftp|auditoria|metasploit|msfconsole)\b/,
+    pattern: /\b(ftp|audit|metasploit|msfconsole|auditoria)\b/,
     answer:
-      "Estudié la seguridad de servicios FTP con msfconsole, la consola de Metasploit Framework. Analicé posibles vulnerabilidades en un laboratorio y documenté recomendaciones para asegurar el servicio.",
-    link: ["Ver el laboratorio FTP", "#cybersecurity"],
+      "I studied FTP service security using msfconsole, the Metasploit Framework console. I analysed potential vulnerabilities in a lab environment and documented recommendations for securing the service.",
+    link: ["View the FTP lab", "#cybersecurity"],
   },
   {
-    pattern: /\b(sql|inyeccion|evaluacion de seguridad)\b/,
+    pattern: /\b(sql|injection|inyeccion|web security assessment)\b/,
     answer:
-      "Analicé vulnerabilidades de inyección SQL en una aplicación de entrenamiento y sus posibles efectos sobre el acceso a la base de datos. Documenté los hallazgos y estudié la validación de entradas como medida de protección.",
-    link: ["Ver el laboratorio de seguridad web", "#cybersecurity"],
+      "I analysed SQL injection vulnerabilities in a training application and their potential impact on database access. I documented the findings and studied input validation as a protective measure.",
+    link: ["View the web security lab", "#cybersecurity"],
   },
   {
-    pattern: /\b(cangur|arduino|matematicas)\b/,
+    pattern: /\b(cangur|arduino|math|maths|matematicas)\b/,
     answer:
-      "Colaboré con Team Resolva en Cangur, un prototipo de tutor de matemáticas con IA local sobre Arduino UNO Q, y ayudé con la presentación al jurado. Puedes consultar la presentación del equipo; no hay demo web disponible.",
-    link: ["Ver Cangur", "#projects"],
+      "I collaborated with Team Resolva on Cangur, a locally powered AI maths tutor prototype built on Arduino UNO Q, and helped prepare the jury presentation. The team presentation is available, but there is no web demo.",
+    link: ["View Cangur", "#projects"],
   },
   {
-    pattern: /\b(support|soporte|swiss|agente|copilot)\b/,
+    pattern: /\b(support|swiss|agent|copilot|soporte|agente)\b/,
     answer:
-      "Participé en un equipo de tres personas en AI Support Agent. El prototipo ayuda a clasificar solicitudes de soporte y revisar respuestas con documentación. El repositorio del equipo describe un frontend React/TypeScript y un backend FastAPI. Mi contribución técnica detallada aún no está publicada.",
-    link: ["Ver el caso técnico", "#projects"],
+      "I took part in a three-person team that built AI Support Agent. The prototype helps classify support requests and review answers using documentation. The team repository describes a React and TypeScript frontend with a FastAPI backend. My detailed technical contribution is not yet published.",
+    link: ["View the technical case", "#projects"],
   },
   {
-    pattern: /\b(imagen|imagenes|image|classifier|clasificador|mobilenet)\b/,
+    pattern: /\b(image|images|classifier|mobilenet|imagen|clasificador)\b/,
     answer:
-      "Construí un clasificador de imágenes en el navegador con JavaScript, TensorFlow.js y MobileNet. Probé distintas imágenes y añadí la confianza de las predicciones para ayudar a interpretar las respuestas. Su demo y su código todavía no están enlazados.",
-    link: ["Ver Image Classifier", "#projects"],
-  },
-  {
-    pattern: /\b(seguridad|ciberseguridad|security|ciber)\b/,
-    answer:
-      "Mis laboratorios de ciberseguridad incluyen el análisis de vulnerabilidades de inyección SQL y la seguridad de servicios FTP con Metasploit Framework y msfconsole.",
-    link: ["Ver mis laboratorios", "#cybersecurity"],
-  },
-  {
-    pattern: /\b(edad|anos|naciste|nacimiento|2007|cumpleanos)\b/,
-    answer: "Tengo 19 años y nací en 2007.",
-  },
-  {
-    pattern: /\b(color|verde)\b/,
-    answer:
-      "Mi color favorito es el verde; por eso tiene protagonismo en mi portfolio.",
-  },
-  {
-    pattern: /\b(gym|gimnasio|aficion|aficiones|hobby|hobbies|tiempo libre)\b/,
-    answer:
-      "Me gusta ir al gimnasio. También disfruto programando y explorando las ciencias de la computación: es mi pasión.",
+      "I built an in-browser image classifier with JavaScript, TensorFlow.js and MobileNet. I tested different images and added prediction confidence to make the results easier to interpret. Its demo and source code are not yet linked here.",
+    link: ["View Image Classifier", "#projects"],
   },
   {
     pattern:
-      /\b(pasion|programacion|computacion|informatica|motiva|apasiona)\b/,
+      /\b(security|cybersecurity|cyber|seguridad|ciberseguridad|ciber)\b/,
     answer:
-      "La programación y las ciencias de la computación son mi pasión. Me gusta experimentar y comprobar cómo funcionan mis proyectos con ejemplos reales.",
+      "My cybersecurity labs include SQL injection vulnerability analysis and FTP service security using Metasploit Framework and msfconsole.",
+    link: ["View my security labs", "#cybersecurity"],
+  },
+  {
+    pattern: /\b(age|old|born|birthday|2007|edad|anos|nacimiento)\b/,
+    answer: "I am 19 years old and was born in 2007.",
+  },
+  {
+    pattern: /\b(colou?r|green|verde)\b/,
+    answer:
+      "My favourite colour is green, which is why it plays such a prominent role in my portfolio.",
+  },
+  {
+    pattern: /\b(gym|fitness|hobby|hobbies|free time|gimnasio|aficion)\b/,
+    answer:
+      "I enjoy going to the gym. I also love programming and exploring computer science—it is my passion.",
   },
   {
     pattern:
-      /\b(contacto|contactar|contactarte|correo|email|linkedin|github|contratar|escribirte)\b/,
-    answer: `Puedes escribirme a ${profile.email}, contactar conmigo por LinkedIn o ver mi trabajo en GitHub.`,
+      /\b(passion|programming|computer science|computing|motivation|pasion|programacion|computacion|informatica)\b/,
+    answer:
+      "Programming and computer science are my passion. I enjoy experimenting and finding out how my projects behave through real examples.",
+  },
+  {
+    pattern:
+      /\b(contact|email|linkedin|github|hire|reach|write|contacto|correo|contratar)\b/,
+    answer: `You can email me at ${profile.email}, connect with me on LinkedIn or explore my work on GitHub.`,
     link: contactLink,
   },
   {
-    pattern: /\b(proyecto|proyectos|trabajo|portfolio|demo|demos)\b/,
+    pattern:
+      /\b(project|projects|work|portfolio|demo|proyecto|proyectos|trabajo)\b/,
     answer:
-      "Mis proyectos incluyen AI Support Agent, Cangur, Image Classifier y este portfolio React. También tengo laboratorios académicos de ciberseguridad. En cada caso indico la evidencia disponible y sus limitaciones.",
-    link: ["Explorar proyectos y evidencias", "#projects"],
+      "My projects include AI Support Agent, Cangur, Image Classifier and this React portfolio. I also have academic cybersecurity labs. Each case clearly states the available evidence and its limitations.",
+    link: ["Explore projects and evidence", "#projects"],
   },
   {
     pattern:
-      /\b(habilidad|habilidades|tecnologia|tecnologias|skill|skills|herramientas|react|javascript|python|css|html|typescript)\b/,
+      /\b(skill|skills|technology|technologies|tools|react|javascript|python|css|html|typescript|habilidad|tecnologia|tecnologias|herramientas)\b/,
     answer:
-      "Utilizo HTML, CSS, JavaScript, TypeScript, React, Git, Python, SQL y herramientas de IA. En el portfolio puedes ver qué tecnologías corresponden a cada proyecto; no todas implican experiencia profesional.",
-    link: ["Ver habilidades con contexto", "#skills"],
+      "I use HTML, CSS, JavaScript, TypeScript, React, Git, Python, SQL and AI tools. The portfolio shows which technologies belong to each project; not all of them represent professional experience.",
+    link: ["View skills in context", "#skills"],
   },
   {
     pattern:
-      /\b(quien|sobre|jalal|estudias|estudia|biografia|barcelona|presentate)\b/,
+      /\b(who|about|jalal|study|studying|biography|barcelona|introduce|quien|sobre|estudias|biografia|presentate)\b/,
     answer:
-      "Soy Jalal Hazi Miah, estudiante de desarrollo web en Barcelona. Me interesan el frontend y los prototipos de IA. En mis proyectos pruebo ideas, observo sus limitaciones y busco cómo explicarlas mejor en la interfaz.",
-    link: ["Leer sobre mí", "#about"],
+      "I am Jalal Hazi Miah, a web development student based in Barcelona. I am interested in frontend development and AI prototypes. Through my projects, I test ideas, observe their limitations and find clearer ways to explain them in the interface.",
+    link: ["Read about me", "#about"],
   },
   {
-    pattern: /\b(hola|buenas|hello)\b/,
+    pattern: /\b(hello|hi|hey|hola|buenas)\b/,
     answer:
-      "¡Hola! Puedes preguntarme por mis proyectos, habilidades, formación o contacto. Este chat responde a temas preparados, sin IA generativa.",
+      "Hello! Ask me about my projects, skills, education or contact details. This chatbot uses prepared answers rather than generative AI.",
   },
   {
-    pattern: /\b(gracias)\b/,
+    pattern: /\b(thanks|thank you|gracias)\b/,
     answer:
-      "¡Gracias por visitar mi portfolio! Puedes escribirme si quieres conocer más detalles de mi trabajo.",
+      "Thanks for visiting my portfolio! Feel free to contact me if you would like to learn more about my work.",
     link: contactLink,
   },
 ];
 
 export function findAnswer(question) {
   if (typeof question !== "string" || !question.trim()) {
-    return { answer: "Escribe una pregunta o elige una de las sugerencias." };
+    return { answer: "Type a question or choose one of the suggestions." };
   }
+
   const text = normalize(question);
   return (
     topics.find((topic) => topic.pattern.test(text)) ?? {
       answer:
-        "No tengo una respuesta preparada para esa pregunta. Puedo hablar de mis proyectos, habilidades y formación. Para otros detalles, puedes escribirme directamente.",
+        "I do not have a prepared answer for that question. I can talk about my projects, skills and education. For anything else, you can contact me directly.",
       link: contactLink,
     }
   );

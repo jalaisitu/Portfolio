@@ -1,4 +1,4 @@
-// Contenido verificable. Añade las contribuciones técnicas personales cuando estén confirmadas.
+// Verifiable content. Add personal technical contributions only after they are confirmed.
 export const profile = {
   name: "Jalal Hazi Miah",
   email: "jalailsahakter@gmail.com",
@@ -10,86 +10,86 @@ export const projects = [
   {
     id: "support",
     name: "AI Support Agent",
-    kind: "Proyecto en equipo · Swiss AI Weeks 2026",
+    kind: "Team project · Swiss AI Weeks 2026",
     description:
-      "Un copiloto para clasificar tickets de soporte y ayudar al equipo a revisar respuestas con documentación de referencia.",
+      "A copilot that classifies support tickets and helps teams review suggested answers using reference documentation.",
     tags: ["React", "TypeScript", "Python", "FastAPI", "RAG"],
     problem:
-      "Los equipos de soporte necesitan clasificar solicitudes y encontrar información relevante antes de proponer una solución.",
+      "Support teams need to classify requests and find relevant information before proposing a solution.",
     solution:
-      "El prototipo combina triaje, recuperación de casos anteriores y respuestas asistidas. El analista puede revisar y modificar las sugerencias.",
-    role: "Participé en un equipo de tres personas en el reto de Swiss Life. La arquitectura descrita aquí corresponde al proyecto del equipo.",
+      "The prototype combines ticket triage, retrieval of previous cases and AI-assisted answers. Analysts can review and edit every suggestion.",
+    role: "I took part in a three-person team for the Swiss Life challenge. The architecture described here belongs to the team project.",
     decisions:
-      "Según el README del equipo, el frontend utiliza React y TypeScript; el backend, FastAPI. La generación de sugerencias utiliza Azure OpenAI.",
+      "According to the team README, the frontend uses React and TypeScript, while the backend uses FastAPI. Suggestions are generated with Azure OpenAI.",
     result:
-      "Prototipo de hackathon con código público e instrucciones de ejecución. No se presenta como un servicio en producción.",
+      "A hackathon prototype with public source code and setup instructions. It is not presented as a production service.",
     limitation:
-      "La ejecución completa requiere configurar los servicios indicados en el repositorio. No hay una demo pública enlazada.",
+      "Running the full project requires configuring the services listed in the repository. No public live demo is currently available.",
     evidence: {
-      label: "Código y documentación",
+      label: "Code and documentation",
       url: "https://github.com/sOdreams/swiss-AI-Support-forOperational-Service-Desk",
     },
   },
   {
     id: "cangur",
     name: "Cangur",
-    kind: "Proyecto en equipo · Datathon FME 2026",
+    kind: "Team project · FME Datathon 2026",
     description:
-      "Un tutor de matemáticas con IA local para acompañar el aprendizaje paso a paso, incluso sin conexión.",
-    tags: ["Arduino UNO Q", "IA local", "Prototipado"],
+      "An offline, locally powered AI maths tutor designed to guide students through problems step by step.",
+    tags: ["Arduino UNO Q", "Local AI", "Prototyping"],
     problem:
-      "Ofrecer orientación para resolver problemas de matemáticas sin depender de una conexión a internet.",
+      "Provide guidance for solving maths problems without relying on an internet connection.",
     solution:
-      "Un prototipo de tutor sobre Arduino UNO Q que propone pistas para acompañar la resolución de ejercicios.",
-    role: "Colaboré con Team Resolva en el prototipo y ayudé a preparar la presentación para el jurado.",
+      "A tutor prototype built on Arduino UNO Q that provides hints to support students as they work through exercises.",
+    role: "I collaborated with Team Resolva on the prototype and helped prepare the presentation for the jury.",
     decisions:
-      "El proyecto explora la ejecución local de IA en una plataforma física. La presentación documenta la propuesta del equipo.",
+      "The project explores running AI locally on physical hardware. The presentation documents the team's proposal.",
     result:
-      "Prototipo presentado al jurado de Datathon FME 2026. La presentación se puede consultar a continuación.",
+      "The prototype was presented to the FME Datathon 2026 jury. The team presentation is available below.",
     limitation:
-      "No hay demo web. El enlace al repositorio proporcionado anteriormente no está accesible; se mantiene la presentación como evidencia disponible.",
+      "There is no web demo. The repository link previously provided is no longer accessible, so the presentation remains the available evidence.",
     evidence: {
-      label: "Ver presentación (PDF)",
+      label: "View presentation (PDF)",
       url: "/cangur-presentation.pdf",
     },
   },
   {
     id: "classifier",
     name: "Image Classifier",
-    kind: "Proyecto individual · Investigación 2024–2025",
+    kind: "Individual project · Research 2024–2025",
     description:
-      "Clasificación de imágenes en el navegador, con puntuaciones de confianza para interpretar las predicciones del modelo.",
+      "In-browser image classification with confidence scores that make the model's predictions easier to interpret.",
     tags: ["JavaScript", "TensorFlow.js", "MobileNet"],
     problem:
-      "Mostrar qué predice un modelo sobre una imagen y permitir interpretar cuánta confianza tiene en su respuesta.",
+      "Show what a model predicts from an image and help users understand how confident it is in that answer.",
     solution:
-      "Una aplicación de navegador que clasifica imágenes y muestra la confianza de cada predicción.",
-    role: "Construí la aplicación, la probé con distintas imágenes y documenté sus limitaciones.",
+      "A browser application that classifies images and displays a confidence score for each prediction.",
+    role: "I built the application, tested it with different images and documented its limitations.",
     decisions:
-      "Utilicé TensorFlow.js y MobileNet para ejecutar la clasificación en el navegador. Añadí la confianza de las predicciones a la interfaz.",
+      "I used TensorFlow.js and MobileNet to run classification in the browser, then added prediction confidence to the interface.",
     result:
-      "La experimentación permitió identificar fallos del modelo y hacer visible su incertidumbre al usuario.",
+      "Testing exposed model failures and made its uncertainty visible to the user.",
     limitation:
-      "No se publican cifras de precisión sin una evaluación reproducible. El código y la demo de este proyecto todavía no están disponibles en el portfolio.",
+      "I do not publish accuracy figures without a reproducible evaluation. The source code and demo are not yet linked from this portfolio.",
   },
   {
     id: "portfolio",
-    name: "Este portfolio",
+    name: "This portfolio",
     kind: "Frontend · React",
     description:
-      "La web que estás explorando: componentes reutilizables, temas persistentes, navegación accesible y un chat local sin API.",
-    tags: ["React", "CSS responsive", "Accesibilidad", "Node test"],
+      "The site you are exploring: reusable components, persistent themes, accessible navigation and a local chatbot with no external API.",
+    tags: ["React", "Responsive CSS", "Accessibility", "Node test"],
     problem:
-      "Presentar proyectos y evidencias de trabajo de forma legible, rápida y accesible desde móvil y escritorio.",
+      "Present projects and evidence clearly, quickly and accessibly across mobile and desktop devices.",
     solution:
-      "Una aplicación React con casos técnicos desplegables, contacto directo, tema claro/oscuro y respuestas locales sobre mi perfil.",
-    role: "Este portfolio reúne mi contenido y mis proyectos. La interfaz actual sirve como ejemplo interactivo de los comportamientos descritos.",
+      "A React application with expandable technical case studies, direct contact links, light and dark themes, and local answers about my profile.",
+    role: "This portfolio brings together my work and projects. The current interface is an interactive example of the behaviours described here.",
     decisions:
-      "Los datos están separados de los componentes. Las animaciones respetan movimiento reducido; el chat funciona sin llamadas externas y tiene pruebas de sus reglas.",
+      "Content is separated from components. Animations respect reduced-motion preferences, while the chatbot works without external requests and includes tests for its rules.",
     result:
-      "Puedes comprobar el tema, las preguntas sugeridas, el cierre con Escape y la navegación por teclado directamente en esta página.",
+      "You can test the theme, suggested questions, Escape-key behaviour and keyboard navigation directly on this page.",
     limitation:
-      "El chat es una guía de respuestas preparadas, no una IA generativa. No se atribuyen métricas de rendimiento sin una medición.",
+      "The chatbot uses prepared answers rather than generative AI. I do not claim performance metrics without measuring them.",
     live: true,
   },
 ];
@@ -97,43 +97,42 @@ export const projects = [
 export const labs = [
   {
     id: "ftp",
-    name: "Seguridad de servicios FTP con Metasploit Framework",
-    problem:
-      "Evaluar la seguridad de servicios FTP en un entorno de laboratorio.",
-    work: "Utilicé msfconsole, la consola de Metasploit Framework, para analizar la seguridad del servicio FTP y estudiar sus posibles vulnerabilidades.",
+    name: "FTP service security with Metasploit Framework",
+    problem: "Assess the security of FTP services in a lab environment.",
+    work: "I used msfconsole, the Metasploit Framework console, to analyse the FTP service and study potential vulnerabilities.",
     result:
-      "Documenté recomendaciones para asegurar el servicio. El informe no está publicado en este portfolio.",
+      "I documented recommendations for securing the service. The report is not published in this portfolio.",
     tags: ["FTP", "Metasploit Framework", "msfconsole"],
   },
   {
     id: "sql",
-    name: "Análisis de vulnerabilidades de inyección SQL",
+    name: "SQL injection vulnerability analysis",
     problem:
-      "Estudiar los riesgos de inyección SQL en una aplicación de entrenamiento.",
-    work: "Analicé vulnerabilidades de inyección SQL y sus posibles efectos sobre el acceso a la base de datos en una aplicación de entrenamiento.",
+      "Study the risks of SQL injection in a purpose-built training application.",
+    work: "I analysed SQL injection vulnerabilities and their potential impact on database access in a training application.",
     result:
-      "Documenté los hallazgos del laboratorio y estudié la validación de entradas como medida de protección.",
-    tags: ["Inyección SQL", "Validación de entradas", "Seguridad de datos"],
+      "I documented the lab findings and studied input validation as a protective measure.",
+    tags: ["SQL injection", "Input validation", "Data security"],
   },
 ];
 
 export const skills = [
   {
     number: "01",
-    name: "Desarrollo frontend",
-    text: "Interfaz y lógica de aplicaciones web. React aparece en el proyecto de soporte y en este portfolio.",
+    name: "Frontend development",
+    text: "Interfaces and web application logic. React is used in the support project and throughout this portfolio.",
     tags: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React"],
   },
   {
     number: "02",
-    name: "Datos y herramientas",
-    text: "Herramientas utilizadas en prototipos de IA, investigación académica y colaboración con código.",
+    name: "Data and tools",
+    text: "Tools used across AI prototypes, academic research and collaborative software projects.",
     tags: ["Git", "Python", "SQL", "TensorFlow", "pandas", "NumPy"],
   },
   {
     number: "03",
-    name: "Trabajo en equipo",
-    text: "Participación en Datathon FME y Swiss AI Weeks, pruebas de prototipos y presentaciones al jurado.",
-    tags: ["Colaboración", "Hackathons", "Documentación", "Presentaciones"],
+    name: "Teamwork",
+    text: "Experience in FME Datathon and Swiss AI Weeks, including prototype testing and jury presentations.",
+    tags: ["Collaboration", "Hackathons", "Documentation", "Presentations"],
   },
 ];

@@ -2,61 +2,59 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { findAnswer } from "./chatKnowledge.js";
 
-test("distingue experiencia profesional de edad aunque la pregunta contenga años", () => {
-  const answer = findAnswer("¿Cuántos años de experiencia tienes?").answer;
-  assert.match(answer, /experiencia profesional/);
-  assert.doesNotMatch(answer, /Tengo 19/);
+test("distinguishes professional experience from age", () => {
+  const answer = findAnswer("How many years of experience do you have?").answer;
+  assert.match(answer, /professional experience/);
+  assert.doesNotMatch(answer, /19 years old/);
 });
 
-test("mantiene la edad para preguntas sobre edad", () => {
-  assert.match(findAnswer("¿Cuántos años tienes?").answer, /19 años/);
+test("answers direct questions about age", () => {
+  assert.match(findAnswer("How old are you?").answer, /19 years old/);
 });
 
-test("la evaluación SQL tiene prioridad sobre seguridad general", () => {
-  const answer = findAnswer(
-    "¿Qué hiciste en la evaluación de seguridad SQL?",
-  ).answer;
-  assert.match(answer, /inyección SQL/);
+test("SQL assessment takes priority over general security", () => {
+  const answer = findAnswer("What did you do in the SQL security lab?").answer;
+  assert.match(answer, /SQL injection/);
   assert.doesNotMatch(answer, /FTP/);
 });
 
-test("normaliza tildes, mayúsculas y Unicode descompuesto", () => {
+test("normalises case, accents and decomposed Unicode", () => {
   assert.match(
     findAnswer("¿QUÉ TECNOLOGÍAS UTILIZAS?".normalize("NFD")).answer,
     /JavaScript/,
   );
-  assert.match(findAnswer("¿Cuál es tu pasión?").answer, /mi pasión/);
+  assert.match(findAnswer("What is your passion?").answer, /my passion/);
 });
 
-test("evita coincidencias dentro de otras palabras", () => {
+test("avoids matches inside unrelated words", () => {
   assert.match(
-    findAnswer("¿Qué opinas de los humanos?").answer,
-    /No tengo una respuesta/,
+    findAnswer("Do you play chess?").answer,
+    /do not have a prepared answer/,
   );
 });
 
-test("no inventa información de disponibilidad ni del proyecto de prácticas", () => {
+test("does not invent availability or internship details", () => {
   assert.match(
-    findAnswer("¿Tienes disponibilidad para prácticas?").answer,
-    /todavía no están publicados/,
+    findAnswer("Are you available for an internship?").answer,
+    /not currently published/,
   );
 });
 
-test("el contacto incluye el email y un enlace válido a la sección", () => {
-  const answer = findAnswer("¿Cómo puedo contactar contigo?");
+test("contact includes the email and a valid section link", () => {
+  const answer = findAnswer("How can I contact you?");
   assert.match(answer.answer, /jalailsahakter@gmail.com/);
   assert.equal(answer.link[1], "#contact");
 });
 
-test("Cangur ofrece la presentación, sin atribuir un rol técnico desconocido", () => {
-  assert.match(
-    findAnswer("Cuéntame sobre Cangur").answer,
-    /presentación del equipo/,
-  );
+test("Cangur offers the presentation without inventing a technical role", () => {
+  assert.match(findAnswer("Tell me about Cangur").answer, /team presentation/);
 });
 
-test("entrada desconocida, vacía o inválida no produce errores", () => {
-  assert.match(findAnswer("¿Sabes cocinar?").answer, /No tengo una respuesta/);
-  assert.match(findAnswer("   ").answer, /Escribe una pregunta/);
-  assert.match(findAnswer(null).answer, /Escribe una pregunta/);
+test("unknown, empty or invalid input does not cause errors", () => {
+  assert.match(
+    findAnswer("Can you cook?").answer,
+    /do not have a prepared answer/,
+  );
+  assert.match(findAnswer("   ").answer, /Type a question/);
+  assert.match(findAnswer(null).answer, /Type a question/);
 });

@@ -7,36 +7,36 @@ export default function About() {
     <section id="about" className="about-section" aria-labelledby="about-title">
       <div className="shell about-grid">
         <Reveal>
-          <p className="eyebrow">03 / SOBRE MÍ</p>
+          <p className="eyebrow">03 / ABOUT ME</p>
           <h2 id="about-title">
-            Aprender haciendo.
+            Learning by building.
             <br />
-            <em>Y comprobando.</em>
+            <em>And testing.</em>
           </h2>
           <p className="personal-note">
-            Fuera del código: el gimnasio y el verde.
+            Beyond code: the gym and the colour green.
             <br />
-            La programación y las ciencias de la computación son mi pasión.
+            Programming and computer science are my passion.
           </p>
         </Reveal>
         <Reveal className="about-copy">
           <p className="lead">
-            Al probar mi clasificador con distintas imágenes, vi que el modelo
-            podía equivocarse. Añadí la confianza de las predicciones a la
-            interfaz para ayudar a interpretar sus respuestas.
+            While testing my classifier with different images, I saw that the
+            model could be wrong. I added prediction confidence to the interface
+            to make its answers easier to interpret.
           </p>
           <p>
-            Me interesa esa conexión entre lo que hace una aplicación y lo que
-            entiende quien la usa. Estudio desarrollo web en Barcelona y
-            practico con proyectos de frontend, IA y seguridad.
+            I am interested in the connection between what an application does
+            and what its users understand. I study web development in Barcelona
+            and practise through frontend, AI and security projects.
           </p>
           <p>
-            En Datathon FME y Swiss AI Weeks trabajé con equipos para convertir
-            una propuesta en un prototipo y explicar sus posibilidades y
-            limitaciones.
+            At FME Datathon and Swiss AI Weeks, I worked with teams to turn an
+            idea into a prototype and communicate its possibilities and
+            limitations.
           </p>
           <a className="text-link" href={profile.github}>
-            Ver mi perfil en GitHub <span aria-hidden="true">↗</span>
+            View my GitHub profile <span aria-hidden="true">↗</span>
           </a>
         </Reveal>
       </div>

@@ -39,6 +39,7 @@ export default function App() {
           <br />
           CS | Full-Stack Developer
         </p>
+        <a href="#main">Back to top ↑</a>
       </footer>
       <Chatbot />
     </>

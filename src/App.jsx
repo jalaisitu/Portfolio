@@ -35,11 +35,10 @@ export default function App() {
       </main>
       <footer className="shell footer">
         <p>
-          © {new Date().getFullYear()} Jalal Hazi Miah
+          Jalal Hazi Miah
           <br />
-          Frontend development · Barcelona
+          CS | Full-Stack Developer
         </p>
-        <a href="#main">Back to top ↑</a>
       </footer>
       <Chatbot />
     </>

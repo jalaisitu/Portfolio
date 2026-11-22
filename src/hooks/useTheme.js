@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 function readPreference() {
   try {
@@ -19,10 +19,10 @@ export default function useTheme() {
         : "light"),
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.documentElement.dataset.theme = theme;
-    document.querySelector('meta[name="theme-color"]').content =
-      theme === "dark" ? "#14241e" : "#f5f3eb";
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.content = theme === "dark" ? "#14241e" : "#f5f3eb";
   }, [theme]);
 
   useEffect(() => {

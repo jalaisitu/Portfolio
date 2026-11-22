@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { findAnswer } from "../chatKnowledge";
+import { useI18n } from "../i18n";
 
 const questions = [
   "Who are you?",
@@ -8,6 +9,7 @@ const questions = [
   "How can I contact you?",
 ];
 export default function Chatbot() {
+  const { t } = useI18n();
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
@@ -43,7 +45,7 @@ export default function Chatbot() {
     field.current?.focus();
   };
   return (
-    <aside className="chat-widget" aria-label="Local portfolio chatbot">
+    <aside className="chat-widget" aria-label={t("Local portfolio chatbot")}>
       {open && (
         <section
           className="chat-panel"
@@ -55,10 +57,10 @@ export default function Chatbot() {
         >
           <header className="chat-header">
             <div>
-              <h2 id="chat-title">Get to know me.</h2>
-              <p>Jalal · local answers</p>
+              <h2 id="chat-title">{t("Get to know me.")}</h2>
+              <p>{t("Jalal · local answers")}</p>
             </div>
-            <button onClick={close} aria-label="Close chatbot">
+            <button onClick={close} aria-label={t("Close chatbot")}>
               ×
             </button>
           </header>
@@ -67,7 +69,7 @@ export default function Chatbot() {
             data-lenis-prevent
             ref={log}
             role="log"
-            aria-label="Conversation"
+            aria-label={t("Conversation")}
             aria-live="polite"
             aria-relevant="additions"
             tabIndex="0"
@@ -77,8 +79,10 @@ export default function Chatbot() {
                 key={index}
                 className={`chat-message ${message.user ? "chat-user" : ""}`}
               >
-                <strong>{message.user ? "You" : "Jalal · local chat"}</strong>
-                {message.text}
+                <strong>
+                  {message.user ? t("You") : t("Jalal · local chat")}
+                </strong>
+                {message.user ? message.text : t(message.text)}
                 {message.link && (
                   <a
                     href={message.link[1]}
@@ -89,7 +93,7 @@ export default function Chatbot() {
                       target?.focus();
                     }}
                   >
-                    {message.link[0]} ↗
+                    {t(message.link[0])} ↗
                   </a>
                 )}
               </p>
@@ -98,7 +102,7 @@ export default function Chatbot() {
           <div className="chat-suggestions">
             {questions.map((question, i) => (
               <button key={question} onClick={() => ask(question)}>
-                {["About me", "Projects", "Skills", "Contact"][i]}
+                {t(["About me", "Projects", "Skills", "Contact"][i])}
               </button>
             ))}
           </div>
@@ -110,19 +114,19 @@ export default function Chatbot() {
             }}
           >
             <label className="sr-only" htmlFor="chat-input">
-              Your question
+              {t("Your question")}
             </label>
             <input
               ref={field}
               id="chat-input"
               value={input}
               onChange={(event) => setInput(event.target.value)}
-              placeholder="What would you like to know?"
+              placeholder={t("What would you like to know?")}
               maxLength={300}
               required
               autoComplete="off"
             />
-            <button type="submit" aria-label="Send question">
+            <button type="submit" aria-label={t("Send question")}>
               ↗
             </button>
           </form>
@@ -135,7 +139,7 @@ export default function Chatbot() {
         aria-controls={open ? "portfolio-chat" : undefined}
         onClick={() => setOpen(!open)}
       >
-        <span aria-hidden="true">✳</span> Ask me about myself
+        <span aria-hidden="true">✳</span> {t("Ask me about myself")}
       </button>
     </aside>
   );

@@ -1,7 +1,9 @@
 import React from "react";
 import { profile } from "../data/portfolio";
+import { useI18n } from "../i18n";
 
 export default function Hero() {
+  const { t } = useI18n();
   return (
     <section
       className="shell hero"
@@ -15,31 +17,32 @@ export default function Hero() {
         </p>
         <h1 id="hero-title">
           <span className="hero-title-line hero-title-primary">
-            Frontend development.
+            {t("Frontend development.")}
           </span>
           <span className="hero-title-line hero-title-accent">
-            <em>Ideas that work.</em>
+            <em>{t("Ideas that work.")}</em>
           </span>
         </h1>
         <p className="hero-intro">
-          I am a web development student based in Barcelona. I build interfaces
-          with JavaScript and React and explore AI through prototypes.
+          {t(
+            "I am a web development student based in Barcelona. I build interfaces with JavaScript and React and explore AI through prototypes.",
+          )}
         </p>
         <div className="actions">
           <a href="#projects" className="button primary">
-            View projects and code <span aria-hidden="true">↗</span>
+            {t("View projects and code")} <span aria-hidden="true">↗</span>
           </a>
           <a href={`mailto:${profile.email}`} className="text-link">
-            Contact me by email <span aria-hidden="true">→</span>
+            {t("Contact me by email")} <span aria-hidden="true">→</span>
           </a>
         </div>
-        <div className="hero-proof" aria-label="Project experience">
+        <div className="hero-proof" aria-label={t("Project experience")}>
           <span>React & JavaScript</span>
-          <span>Team prototypes</span>
-          <span>Security labs</span>
+          <span>{t("Team prototypes")}</span>
+          <span>{t("Security labs")}</span>
         </div>
         <div className="scroll-cue" aria-hidden="true">
-          <span>Scroll to explore</span>
+          <span>{t("Scroll to explore")}</span>
           <span className="scroll-cue-line" />
         </div>
       </div>

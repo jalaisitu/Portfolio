@@ -10,9 +10,11 @@ import Chatbot from "./components/Chatbot";
 import ScrollEffects from "./components/ScrollEffects";
 import SmoothScroll from "./components/SmoothScroll";
 import useTheme from "./hooks/useTheme";
+import { I18nProvider, useI18n } from "./i18n";
 
-export default function App() {
+function Portfolio() {
   const { theme, toggleTheme } = useTheme();
+  const { t } = useI18n();
 
   return (
     <>
@@ -22,14 +24,14 @@ export default function App() {
         <span />
       </div>
       <a className="skip" href="#main">
-        Skip to content
+        {t("Skip to content")}
       </a>
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main id="main" tabIndex={-1}>
         <Hero />
+        <About />
         <Projects />
         <Cybersecurity />
-        <About />
         <Skills />
         <Contact />
       </main>
@@ -39,9 +41,17 @@ export default function App() {
           <br />
           CS | Full-Stack Developer
         </p>
-        <a href="#main">Back to top ↑</a>
+        <a href="#main">{t("Back to top")} ↑</a>
       </footer>
       <Chatbot />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <I18nProvider>
+      <Portfolio />
+    </I18nProvider>
   );
 }

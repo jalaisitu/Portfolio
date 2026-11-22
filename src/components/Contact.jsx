@@ -1,25 +1,27 @@
 import React from "react";
 import { profile } from "../data/portfolio";
 import Reveal from "./Reveal";
+import { useI18n } from "../i18n";
 
 export default function Contact() {
+  const { t } = useI18n();
   return (
     <section
       id="contact"
       className="shell contact-section"
-      aria-label="Professional contact"
+      aria-label={t("Professional contact")}
     >
       <Reveal className="contact-inner">
         <div>
-          <p className="eyebrow">05 / PROFESSIONAL CONTACT</p>
+          <p className="eyebrow">05 / {t("PROFESSIONAL CONTACT")}</p>
           <p>
-            Get in touch to discuss my projects,
+            {t("Get in touch to discuss my projects,")}
             <br />
-            my studies or a professional opportunity.
+            {t("my studies or a professional opportunity.")}
           </p>
           <div className="actions">
             <a href={`mailto:${profile.email}`} className="button light">
-              Contact me by email <span aria-hidden="true">↗</span>
+              {t("Contact me by email")} <span aria-hidden="true">↗</span>
             </a>
             <a href={profile.linkedin} className="text-link">
               LinkedIn <span aria-hidden="true">↗</span>

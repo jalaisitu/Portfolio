@@ -2,8 +2,10 @@ import React from "react";
 import { skills } from "../data/portfolio";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
+import { useI18n } from "../i18n";
 
 export default function Skills() {
+  const { t } = useI18n();
   return (
     <section
       id="skills"
@@ -13,10 +15,10 @@ export default function Skills() {
       <SectionHeading
         id="skills-title"
         number="04"
-        label="SKILLS"
+        label={t("SKILLS")}
         title={
           <>
-            Tools with <em>context.</em>
+            {t("Tools with")} <em>{t("context.")}</em>
           </>
         }
       />
@@ -24,11 +26,11 @@ export default function Skills() {
         {skills.map((skill, index) => (
           <Reveal className="skill" key={skill.number} delay={index * 70}>
             <span className="skill-number">{skill.number} /</span>
-            <h3>{skill.name}</h3>
-            <p>{skill.text}</p>
-            <ul className="tags" aria-label={skill.name}>
+            <h3>{t(skill.name)}</h3>
+            <p>{t(skill.text)}</p>
+            <ul className="tags" aria-label={t(skill.name)}>
               {skill.tags.map((tag) => (
-                <li key={tag}>{tag}</li>
+                <li key={tag}>{t(tag)}</li>
               ))}
             </ul>
           </Reveal>

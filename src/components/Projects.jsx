@@ -1,9 +1,12 @@
 import React from "react";
 import { projects } from "../data/portfolio";
 import ProjectCard from "./ProjectCard";
+import ProjectCarousel from "./ProjectCarousel";
 import SectionHeading from "./SectionHeading";
+import { useI18n } from "../i18n";
 
 export default function Projects() {
+  const { t } = useI18n();
   return (
     <section
       id="projects"
@@ -12,22 +15,24 @@ export default function Projects() {
     >
       <SectionHeading
         id="projects-title"
-        number="01"
-        label="PROJECTS AND EVIDENCE"
+        number="02"
+        label={t("PROJECTS AND EVIDENCE")}
         title={
           <>
-            What I have built.
+            {t("What I have built.")}
             <br />
-            <em>How it works.</em>
+            <em>{t("How it works.")}</em>
           </>
         }
-        aside="Context, contribution and technical decisions. Each case clearly separates individual work from team work."
+        aside={t(
+          "Context, contribution and technical decisions. Each case clearly separates individual work from team work.",
+        )}
       />
-      <div className="project-grid">
-        {projects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
+      <ProjectCarousel>
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
-      </div>
+      </ProjectCarousel>
     </section>
   );
 }

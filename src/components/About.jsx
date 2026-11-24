@@ -11,30 +11,30 @@ export default function About() {
         <Reveal>
           <p className="eyebrow">01 / {t("ABOUT ME")}</p>
           <h2 id="about-title">
-            {t("Learning by building.")}
+            {t("Curious by nature.")}
             <br />
-            <em>{t("And testing.")}</em>
+            <em>{t("Always figuring things out.")}</em>
           </h2>
           <p className="personal-note">
-            {t("Beyond code: the gym and the colour green.")}
+            {t("Away from the screen: gym, running and hiking.")}
             <br />
-            {t("Programming and computer science are my passion.")}
+            {t("And yes, I am a Death Note fan.")}
           </p>
         </Reveal>
         <Reveal className="about-copy">
           <p className="lead">
             {t(
-              "While testing my classifier with different images, I saw that the model could be wrong. I added prediction confidence to the interface to make its answers easier to interpret.",
+              "I got into programming out of curiosity. I wanted to understand how the games I played were made. I already liked maths and building things, so code felt like a place where both could meet.",
             )}
           </p>
           <p>
             {t(
-              "I am interested in the connection between what an application does and what its users understand. I study web development in Barcelona and practise through frontend, AI and security projects.",
+              "What interests me most now is artificial intelligence and understanding difficult problems: breaking them down, experimenting and finding an answer that makes sense.",
             )}
           </p>
           <p>
             {t(
-              "At FME Datathon and Swiss AI Weeks, I worked with teams to turn an idea into a prototype and communicate its possibilities and limitations.",
+              "I see myself as curious and self-taught. Training has taught me to keep showing up even when results take time. Doing difficult things today makes me feel better and gives me hope that the effort will be worth it.",
             )}
           </p>
           <a className="text-link" href={profile.github}>

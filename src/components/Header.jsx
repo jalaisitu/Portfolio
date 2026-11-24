@@ -7,6 +7,9 @@ export default function Header({ theme, toggleTheme }) {
 
   return (
     <header className="shell topbar">
+      <a className="header-name" href="#main">
+        Jalal Hazi Miah
+      </a>
       <nav aria-label={t("Main navigation")}>
         <a href="#projects">{t("Projects")}</a>
         <a href="#about">{t("About me")}</a>

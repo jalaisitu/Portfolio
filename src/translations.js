@@ -57,6 +57,37 @@ const entries = [
   ],
   ["Academic lab", "Pràctica acadèmica", "Práctica académica"],
   ["ABOUT ME", "SOBRE MI", "SOBRE MÍ"],
+  ["Curious by nature.", "Curiós per naturalesa.", "Curioso por naturaleza."],
+  [
+    "Always figuring things out.",
+    "Sempre intentant entendre les coses.",
+    "Siempre intentando entender las cosas.",
+  ],
+  [
+    "Away from the screen: gym, running and hiking.",
+    "Lluny de la pantalla: gimnàs, córrer i senderisme.",
+    "Lejos de la pantalla: gimnasio, correr y senderismo.",
+  ],
+  [
+    "And yes, I am a Death Note fan.",
+    "I sí, soc fan de Death Note.",
+    "Y sí, soy fan de Death Note.",
+  ],
+  [
+    "I got into programming out of curiosity. I wanted to understand how the games I played were made. I already liked maths and building things, so code felt like a place where both could meet.",
+    "Vaig començar a programar per curiositat. Volia entendre com es feien els videojocs als quals jugava. Ja m'agradaven les matemàtiques i construir coses, així que el codi em va semblar un lloc on totes dues podien unir-se.",
+    "Empecé a programar por curiosidad. Quería entender cómo se hacían los videojuegos a los que jugaba. Ya me gustaban las matemáticas y construir cosas, así que el código me pareció un lugar donde ambas podían unirse.",
+  ],
+  [
+    "What interests me most now is artificial intelligence and understanding difficult problems: breaking them down, experimenting and finding an answer that makes sense.",
+    "El que més m'interessa ara és la intel·ligència artificial i entendre problemes difícils: dividir-los en parts, experimentar i trobar una resposta que tingui sentit.",
+    "Lo que más me interesa ahora es la inteligencia artificial y entender problemas difíciles: dividirlos en partes, experimentar y encontrar una respuesta que tenga sentido.",
+  ],
+  [
+    "I see myself as curious and self-taught. Training has taught me to keep showing up even when results take time. Doing difficult things today makes me feel better and gives me hope that the effort will be worth it.",
+    "Em considero curiós i autodidacte. Entrenar m'ha ensenyat a continuar encara que els resultats triguin a arribar. Fer coses difícils avui em fa sentir millor i em dona l'esperança que l'esforç valdrà la pena.",
+    "Me considero curioso y autodidacta. Entrenar me ha enseñado a seguir adelante aunque los resultados tarden en llegar. Hacer cosas difíciles hoy me hace sentir mejor y me da la esperanza de que el esfuerzo valdrá la pena.",
+  ],
   ["Learning by building.", "Aprendre creant.", "Aprender creando."],
   ["And testing.", "I provant.", "Y probando."],
   [
@@ -158,6 +189,38 @@ const entries = [
     " Pulsa Espacio para reanudar el desplazamiento automático.",
   ],
   ["Project cards", "Targetes de projectes", "Tarjetas de proyectos"],
+  ["Preview", "Vista prèvia", "Vista previa"],
+  ["Source", "Codi", "Código"],
+  ["display mode", "mode de visualització", "modo de visualización"],
+  ["Copy snippet", "Copia el fragment", "Copiar fragmento"],
+  ["Copied!", "Copiat!", "¡Copiado!"],
+  ["Copy failed", "No s'ha pogut copiar", "No se pudo copiar"],
+  [
+    "Snippet copied to clipboard",
+    "Fragment copiat al porta-retalls",
+    "Fragmento copiado al portapapeles",
+  ],
+  [
+    "Could not copy snippet",
+    "No s'ha pogut copiar el fragment",
+    "No se pudo copiar el fragmento",
+  ],
+  [
+    "Scrollable source code",
+    "Codi font desplaçable",
+    "Código fuente desplazable",
+  ],
+  ["Open full source", "Obre el codi complet", "Abrir el código completo"],
+  [
+    "Excerpt from this portfolio",
+    "Fragment d'aquest portafolis",
+    "Fragmento de este portfolio",
+  ],
+  [
+    "Illustrative example · original source not linked",
+    "Exemple il·lustratiu · codi original sense enllaç",
+    "Ejemplo ilustrativo · código original sin enlace",
+  ],
   [
     "FTP service security with Metasploit Framework",
     "Seguretat de serveis FTP amb Metasploit Framework",
